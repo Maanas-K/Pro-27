@@ -4,18 +4,18 @@ class Rope{
           bodyA:body1,
           bodyB:body2,
           stiffness:0.6,
-          length:50,
-          pointB:{x: this.offSetX, y: this.offSetY}
+          length:50
+         // pointB:{x: this.offSetX, y: this.offSetY}
          
        }
 
       this.rope= Constraint.create(options);
-      World.add(world,this.chain);
+      World.add(world,this.rope);
 
 
        
     }
-    display(){
+    /*display(){
 
         var pointA= this.rope.bodyA.position;
         var pointB= this.rope.bodyB.position;
@@ -23,5 +23,5 @@ class Rope{
 
 
         line (pointA.x,pointA.y,pointB.x,pointB.y)
-    }
+    }*/
 }
