@@ -1,17 +1,15 @@
 class ball{
     constructor(x,y,diameter){
      var options={
-      
+         isStatic:true,
          restitution:0.6,
          friction:0.5,
          density:1
      }
+     this.r=diameter/2
   
-  
-      this.body= Bodies.circle (x,y,diameter,options);
-      this.body.position.x=x;
-      this.body.position.y=y;
-      this.diameter=diameter;
+      this.body= Bodies.circle (x,y,this.r,options);
+      
   
       
   
@@ -19,10 +17,11 @@ class ball{
   }
   display(){
      
-     
+    var pos=this.body.position;
       
       fill ("red")
-      ellipse(this.x,this.y,this.diameter,this.diameter)
+      ellipseMode (RADIUS)
+      ellipse(pos.x,pos.y,this.r,this.r)
     
       
   }
